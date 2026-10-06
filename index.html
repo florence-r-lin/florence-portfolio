@@ -13,7 +13,7 @@
 			--muted:#6b7280;
 			--border:#eef0f6;
 		}
-		html,body{height:100%;}
+		html{height:100%;}
 		body{
 			margin:0;
 			font-family:'DM Sans',system-ui,Arial,Helvetica,sans-serif;
@@ -23,11 +23,13 @@
 			-moz-osx-font-smoothing:grayscale;
 			line-height:1.45;
 			-webkit-tap-highlight-color:transparent;
+			min-height:100%;
+			display:flex;
+			flex-direction:column;
 		}
 
 		/* Nav — desktop */
-		.nav-wrap{max-width:1100px;margin:28px auto 12px;padding:0 24px;}
-		nav{display:flex;align-items:center;justify-content:space-between;gap:12px;position:relative;}
+		.nav-wrap{width:100%;box-sizing:border-box;max-width:1100px;margin:28px auto 12px;padding:0 24px;}			nav{display:flex;align-items:center;justify-content:space-between;gap:12px;position:relative;}
 		.nav-left,.nav-right{display:flex;gap:20px;align-items:center}
 		.nav-center{position:absolute;left:50%;transform:translateX(-50%);}
 		.brand{font-family:'DM Sans',sans-serif;font-size:18px;color:var(--muted);font-weight:700;text-decoration:none;cursor:pointer}
@@ -36,7 +38,7 @@
 		a.nav-link:hover{color:var(--accent)}
 		hr.sep{border:none;border-top:1px solid var(--border);margin-top:18px}
 
-		/* Hamburger nav */
+		/* Hamburger — hidden on desktop */
 		.hamburger{display:none;background:none;border:none;cursor:pointer;padding:4px;color:var(--muted);}
 		.hamburger:hover{color:var(--accent)}
 		.hamburger svg{display:block;}
@@ -74,6 +76,7 @@
 		}
 		.home-text{
             color:var(--muted);
+			font-size:15px;
 			display:flex;
 			flex-direction:column;
 			justify-content:center;
@@ -193,7 +196,27 @@
 		.arrow.left{left:4px}
 		.arrow.right{right:4px}
 		.arrow:focus{outline:2px solid rgba(123,111,190,.15);border-radius:6px}
-
+		
+		/* Footer */
+		footer.site-footer{
+			width:100%;
+			max-width:1100px;
+			margin:auto auto 0;
+			padding:0 24px 32px;
+			box-sizing:border-box;
+		}
+		footer.site-footer hr{
+			border:none;
+			border-top:1px solid var(--border);
+			margin:0 0 18px;
+		}
+		footer.site-footer p{
+			margin:0;
+			font-size:12px;
+			font-weight:300;
+			color:var(--muted);
+			text-align:center;
+		}
 		@media(max-width:900px){
 			.nav-wrap{margin:18px auto}
 			.slide{flex:0 0 45%;aspect-ratio:1/1;height:auto}
@@ -210,7 +233,7 @@
 			/* Home stacks on mobile */
 			.home-inner{flex-direction:column;align-items:flex-start;gap:20px;padding:28px 0;}
 			.portrait{width:120px;height:120px;}
-			.home-text p.subtitle{font-size:15px;}
+			.home-text p.subtitle{font-size:17px;}
 
 			.slide{flex:0 0 70%;aspect-ratio:1/1;height:auto}
 			.tab-btn{padding:10px 14px 11px;font-size:12px;}
@@ -254,19 +277,20 @@
 				<img class="portrait" src="pics/IMG_1434.jpg" alt="Florence">
 				<div class="home-text">
 					<p class="subtitle">Hi! I'm Florence :)<br><br> 
+					</p>
                         What I'm up to:
                         <ul style="list-style-type:circle">
-                            <li>Building as a SWE Intern at JPMorganChase 👩🏻‍💻</li>
-                            <li>Trying new restaurants/cafes in the Bay (@florencelin on Beli!)</li>
-                            <li>Getting back into running and lifting</li>
-                            <li>Probably making a matcha or coffee...</li>
+							<li>Currently doing comp-ling research!</li>
+                            <li>Previously building as a SWE Intern at JPMC on the Payments team 👩🏻‍💻</li>
+                            <li>Always trying new restaurants/cafes in Socal ☀️ (@florencelin on Beli!)</li>
+                            <li>Getting back into running 🏃‍♀️ + lifting</li>
+                            <li>Probably making a matcha or coffee!</li>
                         </ul> 
                         Studying: 
                         <ul style="list-style-type:circle">
                             <li>Computer Science B.S. at Harvey Mudd College</li>
                             <li>Linguistics B.A. at Pomona College</li>
                         </ul>
-                    </p>
 				</div>
 			</div>
 		</div>
@@ -440,7 +464,7 @@
 						<div class="slide"><div class="slide-inner"><img src="pics/food/IMG_2805.jpeg" alt="food"><div class="slide-overlay"><span>terrassa martinez, esp</span></div></div></div>
 						<div class="slide"><div class="slide-inner"><img src="pics/food/IMG_2842.jpeg" alt="food"><div class="slide-overlay"><span>jon cake, esp</span></div></div></div>
 						<div class="slide"><div class="slide-inner"><img src="pics/food/IMG_2887.jpeg" alt="food"><div class="slide-overlay"><span>sagrada tapas, esp</span></div></div></div>
-						<div class="slide"><div class="slide-inner"><img src="pics/food/IMG_3051.jpeg" alt="food"><div class="slide-overlay"><span>matcha, ca</span></div></div></div>
+						<div class="slide"><div class="slide-inner"><img src="pics/food/IMG_3051.jpeg" alt="food"><div class="slide-overlay"><span>matcha</span></div></div></div>
 						<div class="slide"><div class="slide-inner"><img src="pics/food/IMG_3343.jpeg" alt="food"><div class="slide-overlay"><span>old brea chop house, ca</span></div></div></div>
 						<div class="slide"><div class="slide-inner"><img src="pics/food/IMG_3500.jpeg" alt="food"><div class="slide-overlay"><span>hanbat shul lung tang, ca</span></div></div></div>
 						<div class="slide"><div class="slide-inner"><img src="pics/food/IMG_3676.jpeg" alt="food"><div class="slide-overlay"><span>matcha</span></div></div></div>
@@ -476,6 +500,11 @@
 			</div>
 		</div>
 	</section>
+	<footer class="site-footer">
+		<hr />
+		<p>last update: Oct 6, 2026</p>
+	</footer>
+	
 
 	<script>
 		const views = document.querySelectorAll('.view');
